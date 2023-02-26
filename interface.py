@@ -68,7 +68,7 @@ def UI():
             # To read file as string:
             string_data = stringio.read()
             App(string_data)
-            st.write(string_data)
+
         else:
             st.write("Please upload a text file to begin")
         
