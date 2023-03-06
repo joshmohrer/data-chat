@@ -38,7 +38,7 @@ def App(file):
     if user_input:
         # run chain with user input and chat history
         output = chain({"question": user_input,
-                       "chat_history": st.session_state["chat_history"]}, return_only_outputs=False)
+                       "chat_history": st.session_state["chat_history"]})
 
         # Putting 5 vertical spaces
         avs.add_vertical_space(5)
