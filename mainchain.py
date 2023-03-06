@@ -19,7 +19,7 @@ def chat_chain(_vectorstore):
                            streaming=True, callback_manager=CallbackManager([StreamingCallbackHandler()]))
     question_generator = LLMChain(llm=llm, prompt=CONDENSE_QUESTION_PROMPT)
     doc_chain = load_qa_with_sources_chain(
-        streaming_llm, chain_type="stuff", prompt=QA_PROMPT)
+        streaming_llm, chain_type="map_reduce")
     chat = ChatVectorDBChain(
         vectorstore=_vectorstore, combine_docs_chain=doc_chain, question_generator=question_generator)
 
