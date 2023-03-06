@@ -29,7 +29,6 @@ def App(file):
     # if "chat_history" not in st.session_state:
     #     st.session_state["chat_history"] = []
 
-    @st.cache_data
     def get_text():
         input_text = st.text_input("What's on your mind? ", key="input")
         return input_text
